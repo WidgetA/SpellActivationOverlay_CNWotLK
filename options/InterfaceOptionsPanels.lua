@@ -67,6 +67,11 @@ function SpellActivationOverlayOptionsPanel_Init(self)
     end
 
     local testButton = SpellActivationOverlayOptionsPanelSpellAlertTestButton;
+    if GetCVar('portal')=='CN' then
+        testButton:SetAttribute("template", "UIPanelButtonTemplate")
+    else
+        testButton:SetAttribute("template", "OptionsButtonTemplate")
+    end
     testButton:SetText("Toggle Test");
     testButton.fakeSpellID = 42;
     testButton.isTesting = false;
@@ -290,6 +295,13 @@ if Settings and Settings.RegisterCanvasLayoutCategory then
 end
 
 function SpellActivationOverlayOptionsPanel_OnLoad(self)
+
+    if GetCVar('portal')=='CN' then
+        self:SetParent(UIParent)
+    else
+        self:SetParent(InterfaceOptionsFramePanelContainer)
+    end
+
     self.name = AddonName;
     self.okay = okayFunc;
     self.cancel = cancelFunc;

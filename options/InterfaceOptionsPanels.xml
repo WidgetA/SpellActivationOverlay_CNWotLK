@@ -2,7 +2,7 @@
 ..\FrameXML\UI.xsd">
   <Script file="InterfaceOptionsPanels.lua"/>
 
-  <Frame name="SpellActivationOverlayOptionsPanel" hidden="true" parent="InterfaceOptionsFramePanelContainer">
+  <Frame name="SpellActivationOverlayOptionsPanel" hidden="true">
     <Layers>
       <Layer level="ARTWORK">
         <FontString name="$parentTitle" text="DISPLAY_LABEL" inherits="GameFontNormalLarge" justifyH="LEFT" justifyV="TOP">
@@ -117,7 +117,7 @@
           </OnValueChanged>
         </Scripts>
       </Slider>
-      <Button name="$parentSpellAlertTestButton" inherits="OptionsButtonTemplate">
+      <Button name="$parentSpellAlertTestButton">
         <Anchors>
           <Anchor point="TOPLEFT" relativeTo="$parentSpellAlertOpacitySlider" relativePoint="TOPRIGHT">
             <Offset>
